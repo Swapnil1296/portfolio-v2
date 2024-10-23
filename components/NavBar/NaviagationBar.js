@@ -1,11 +1,5 @@
 "use-client";
-import React, { useEffect, useRef, useState } from "react";
 
-import Profile from "../Profile/Profile";
-import About from "../About/About";
-import Skills from "../Skills/Skills";
-import Projects from "../Projects/Projects";
-import Contacts from "../Contact/Contacts";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
