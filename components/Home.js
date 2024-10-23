@@ -38,7 +38,7 @@ const Hompage = () => {
         <IconCloud iconSlugs={slugs} />
       </div>
 
-      <div className="flex w-2/3 gap-3 max-w-full items-center justify-center overflow-hidden rounded-lg border bg-background px-20 pb-20 pt-8 mt-2 text-gray-100">
+      <div className="flex w-2/3 gap-3 max-w-full items-center justify-center overflow-hidden rounded-lg border bg-background px-20  pt-8 mt-2 text-gray-100">
         <div className="w-2/3">
           <h2>
             {" "}

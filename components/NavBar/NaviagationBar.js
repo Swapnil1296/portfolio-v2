@@ -1,3 +1,4 @@
+"use-client";
 import React, { useEffect, useRef, useState } from "react";
 
 import Profile from "../Profile/Profile";
@@ -5,6 +6,8 @@ import About from "../About/About";
 import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
 import Contacts from "../Contact/Contacts";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // const NaviagationBar = () => {
 //   const [currentId, setCurrentId] = useState(null);
@@ -167,28 +170,66 @@ import Contacts from "../Contact/Contacts";
 // };
 
 const NaviagationBar = () => {
+  const currentTab = usePathname();
+
   return (
     <>
       <nav class="flex justify-center items-center max-w-full h-[60px] mx-auto  px-4 py-2  text-gray-300 bg-slate-900 shadow-md rounded">
         <ul class="flex items-center justify-between w-2/3">
-          <li className="font-semibold  size-2 cursor-pointer hover:text-blue-500 hover:underline">
+          <Link
+            href="/"
+            prefetch={true}
+            className={`${
+              currentTab === "/" ? "underline text-blue-500" : ""
+            } font-semibold size-2 cursor-pointer hover:text-blue-500 hover:underline`}
+          >
             Profile
-          </li>
-          <li className="font-semibold size-2  cursor-pointer hover:text-blue-500 hover:underline">
+          </Link>
+          <Link
+            href="/skills"
+            prefetch={true}
+            className={`${
+              currentTab === "/skills" ? "underline text-blue-500" : ""
+            } font-semibold size-2 cursor-pointer hover:text-blue-500 hover:underline`}
+          >
             Skills
-          </li>
-          <li className="font-semibold size-2  cursor-pointer hover:text-blue-500 hover:underline">
+          </Link>
+          <Link
+            href="/projects"
+            prefetch={true}
+            className={`${
+              currentTab === "/projects" ? "underline text-blue-500" : ""
+            } font-semibold size-2 cursor-pointer hover:text-blue-500 hover:underline`}
+          >
             Projects
-          </li>
-          <li className="font-semibold size-2  cursor-pointer hover:text-blue-500 hover:underline">
+          </Link>
+          <Link
+            href="/education"
+            prefetch={true}
+            className={`${
+              currentTab === "/education" ? "underline text-blue-500" : ""
+            } font-semibold size-2 cursor-pointer hover:text-blue-500 hover:underline`}
+          >
             Education
-          </li>
-          <li className="font-semibold size-2  cursor-pointer hover:text-blue-500 hover:underline">
+          </Link>
+          <Link
+            href="/employment"
+            prefetch={true}
+            className={`${
+              currentTab === "/employment" ? "underline text-blue-500" : ""
+            } font-semibold size-2 cursor-pointer hover:text-blue-500 hover:underline`}
+          >
             Employment{" "}
-          </li>
-          <li className="font-semibold size-2  cursor-pointer hover:text-blue-500 hover:underline">
+          </Link>
+          <Link
+            href="/achievements"
+            prefetch={true}
+            className={`${
+              currentTab === "/achievements" ? "underline text-blue-500" : ""
+            } font-semibold size-2 cursor-pointer hover:text-blue-500 hover:underline`}
+          >
             Achievements{" "}
-          </li>
+          </Link>
         </ul>
       </nav>
     </>
